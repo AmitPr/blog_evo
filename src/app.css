@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-	font-family: 'Crimson Pro', serif;
-	@apply text-neutral-900 dark:text-neutral-100;
+	@apply font-serif text-neutral-900 dark:text-neutral-100;
 }
 
 article {
@@ -27,7 +26,7 @@ article {
 		@apply text-lg leading-compact text-neutral-800 dark:text-neutral-200;
 	}
 	strong {
-		@apply font-bold;
+		@apply font-black;
 	}
 
 	p {
@@ -65,5 +64,22 @@ article {
 
 	ol {
 		@apply list-decimal;
+	}
+
+	pre {
+		@apply p-2 rounded-xl overflow-scroll border border-neutral-600 dark:border-neutral-700;
+		@apply bg-neutral-200 dark:bg-[#282c34] text-[#383a42] dark:text-[#abb2bf];
+		@apply drop-shadow-[0_5px_6px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_5px_6px_rgba(0,0,0,0.8)];
+		@apply text-sm text-left whitespace-pre font-mono;
+		direction: ltr;
+		word-spacing: normal;
+		word-break: normal;
+		-moz-tab-size: 2;
+		-o-tab-size: 2;
+		tab-size: 2;
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		hyphens: none;
 	}
 }

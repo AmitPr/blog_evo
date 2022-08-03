@@ -1,9 +1,25 @@
 ---
 topic: Theory
 url: async-and-multithreaded
+title: "Asynchronous and Multithreaded: What's the difference?"
+date: 1659491812
 ---
-# Asynchronous and Multithreaded: What's the difference?
 While talking to some of friends recently, I noticed that they used the terms "Asynchronous" and "Multithreaded" interchangably. Since the difference can appear to be subtle at first, I thought it best to lay out the differences alongside an analogy that I hope helps. To properly explain the difference between the two, it's important to first understand the basics of both the concepts, as well as how they differ from "simple" single-threaded programs. Let's get some _italic_ and some __bold__ text in here too.
+
+```rust contract.rs
+use entropy_beacon_cosmos::{BeaconQueryMsg, BeaconConfigQuery, BeaconConfigResponse};
+
+let beacon_addr = STATE.load(deps.storage)?.beacon_addr;
+let beacon_config = deps.querier
+    .query::<BeaconConfigResponse>(&cosmwasm_std::QueryRequest::Wasm(
+        WasmQuery::Smart {
+            contract_addr: beacon_addr.to_string(),
+            msg: to_binary(&BeaconQueryMsg::BeaconConfig(BeaconConfigQuery {}))?,
+        },
+    ))?;
+
+let beacon_fee = beacon_config.protocol_fee;
+```
 
 ## Single-threaded processing
 

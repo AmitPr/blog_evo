@@ -1,10 +1,11 @@
-import type { Post } from "./types/post";
+import type { Post } from '$lib/types/post';
 
-const imports = import.meta.glob('../posts/*.md', { eager: true });
+const allPosts: { [path: string]: Post } = import.meta.glob('$lib/posts/*.md', { eager: true });
 
-let posts: Post[] = Object.values(imports).map((post: any) => {
-	let content = post.default.render().html;
-	return { metadata: post.metadata, content, component: post.default};
-});
+export const posts: { [slug: string]: Post } = {};
 
-export default posts;
+for (const path in allPosts) {
+	const post = allPosts[path];
+	const slug = post.metadata.url.toLowerCase();
+	posts[slug] = post;
+}

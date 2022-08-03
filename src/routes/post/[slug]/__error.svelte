@@ -6,7 +6,7 @@
 		return {
 			props: {
 				status: status,
-				slug: params.slug,
+				slug: params.slug
 			}
 		};
 	};
@@ -24,13 +24,13 @@
 </div>
 
 <style>
-	h1{
+	h1 {
 		@apply text-9xl;
 	}
-	h2{
+	h2 {
 		@apply text-2xl;
 	}
-	a{
+	a {
 		@apply text-xl;
 	}
 </style>
