@@ -21,7 +21,6 @@ const h1FrontmatterPreprocessor = {
 		}
 	}
 }
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [preprocess({ postcss: true }), h1FrontmatterPreprocessor, mdsvex({ extensions: [".md"], layout: "src/lib/__md_layout.svelte" })],

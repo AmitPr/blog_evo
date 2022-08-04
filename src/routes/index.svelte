@@ -26,13 +26,24 @@
 <script lang="ts">
 	import TopicTag from '$lib/components/TopicTag.svelte';
 	import type { Post } from '$lib/types/post';
+import Avatar from '$lib/components/Avatar.svelte';
 
 	export let posts: Post[];
 </script>
 
-{#each posts as post}
-	<TopicTag topic={post.metadata.topic} />
-	<div class="text-xl">
-		<a href="/post/{post.metadata.url}">{post.metadata.title}</a>
+<div class="m-4">
+	<div class="flex space-x-2 max-w-4xl mx-auto">
+		<div>
+			<h1 class="text-3xl text-center font-semibold">Amit Prasad</h1>
+			<Avatar/>
+		</div>
+		<div>
+			{#each posts as post}
+				<TopicTag topic={post.metadata.topic} />
+				<div class="text-xl">
+					<a href="/post/{post.metadata.url}">{post.metadata.title}</a>
+				</div>
+			{/each}
+		</div>
 	</div>
-{/each}
+</div>

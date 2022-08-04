@@ -12,7 +12,7 @@
 </script>
 
 <div class="font-light flex items-center space-x-1">
-	<a href="/" class="text-base"> Amit Prasad </a>
+	<a href="/" class="text-base"> Amit </a>
 	<span class="text-sm text-neutral-500">
 		/ {formatted}
 	</span>
