@@ -17,7 +17,7 @@
 		@apply fill-gray-50 dark:fill-zinc-900;
 	}
 	#image {
-		@apply fill-stone-800 dark:fill-neutral-300;
+		@apply fill-stone-800 dark:fill-gray-300;
 	}
     .bg-dotted {
         @apply overflow-hidden relative;
@@ -30,7 +30,7 @@
 		top: -50%;
 		left: -50%;
 		z-index: -1;
-        rotate: 5deg;
+        rotate: 2deg;
 		background-image: radial-gradient(circle at 1px 1px, theme('colors.black') 0.5px, transparent 0);
 		background-size: 5px 5px;
 		@media (prefers-color-scheme: dark) {

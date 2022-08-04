@@ -25,7 +25,7 @@
 </script>
 
 <div class="w-min">
-	<a href="/topic/{topic.toLowerCase()}" class="font-sans font-light text-xs">
+	<a href="/topic/{topic.toLowerCase()}" class="font-serif font-light text-xs">
 		<div class="px-3 py-1 {color} rounded-md flex items-center">
 			{topic}
 		</div>
