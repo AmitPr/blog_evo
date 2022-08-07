@@ -16,6 +16,12 @@
 		}
 	}
 
+	Object.keys(posts).forEach(topic => {
+		posts[topic].sort((a, b) => {
+			return b.metadata.date - a.metadata.date;
+		});
+	});
+
 	type Input = Record<string, any>;
 	type Output = Record<string, any>;
 	export const load: Load<Input, Output> = async ({ params }) => {
