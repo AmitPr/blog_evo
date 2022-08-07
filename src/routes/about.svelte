@@ -6,13 +6,13 @@ import Navbar from "$lib/components/Navbar.svelte";
 <svelte:head>
 	<title>About | Amit Prasad</title>
 	
-    <meta property="og:url" content="https://amitprasad.dev/about" />
+    <meta property="og:url" content="https://prasad.me/about" />
     <meta property="og:title" content="About | Amit Prasad" />
     <meta property="og:description" content="About Amit Prasad" />
 
     <meta name="twitter:title" content="About | Amit Prasad" />
     <meta name="twitter:description" content="About Amit Prasad" />
-    <meta name="twitter:url" content="https://amitprasad.dev/about" />
+    <meta name="twitter:url" content="https://prasad.me/about" />
 </svelte:head>
 
 <Navbar />

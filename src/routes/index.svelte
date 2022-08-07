@@ -31,13 +31,13 @@
 <svelte:head>
 	<title>Amit Prasad's Site</title>
 
-    <meta property="og:url" content="https://amitprasad.dev/" />
+    <meta property="og:url" content="https://prasad.me/" />
     <meta property="og:title" content="Amit Prasad's Site" />
     <meta property="og:description" content="Amit Prasad's homepage on the web." />
 
     <meta name="twitter:title" content="Amit Prasad's Site" />
     <meta name="twitter:description" content="Amit Prasad's homepage on the web." />
-    <meta name="twitter:url" content="https://amitprasad.dev/" />
+    <meta name="twitter:url" content="https://prasad.me/" />
 </svelte:head>
 
 <Navbar />

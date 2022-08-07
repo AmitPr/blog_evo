@@ -44,13 +44,13 @@
 <svelte:head>
 	<title>{metadata.title} | Amit Prasad</title>
 	
-    <meta property="og:url" content="https://amitprasad.dev/post/{metadata.url}" />
+    <meta property="og:url" content="https://prasad.me/post/{metadata.url}" />
     <meta property="og:title" content="{metadata.title}" />
     <meta property="og:description" content="{metadata.description}" />
 
     <meta name="twitter:title" content="{metadata.title}" />
     <meta name="twitter:description" content="{metadata.description}" />
-    <meta name="twitter:url" content="https://amitprasad.dev/post/{metadata.url}" />
+    <meta name="twitter:url" content="https://prasad.me/post/{metadata.url}" />
 </svelte:head>
 
 <div class="mx-4">
