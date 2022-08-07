@@ -30,17 +30,27 @@
 		return {
 			props: {
 				posts: filtered,
+				topic: params.slug.toLowerCase()
 			}
 		};
 	};
 </script>
 
 <script lang="ts">
+	import PostPreview from '$lib/components/PostPreview.svelte';
+
 	export let posts: Post[];
+	export let topic: string;
 </script>
 
 <div class="mx-4">
-    {#each posts as post}
-        <a href="/post/{post.metadata.url}">there is a post</a>
-    {/each}
+	<div class="flex flex-col max-w-2xl mx-auto">
+		<h1 class="text-3xl font-bold text-left">
+			Posts in topic "{topic.charAt(0).toUpperCase() + topic.slice(1)}"
+		</h1>
+		<hr class="my-2 border-gray-300 dark:border-zinc-700" />
+		{#each posts as post}
+			<PostPreview {post} showTopic={false} />
+		{/each}
+	</div>
 </div>

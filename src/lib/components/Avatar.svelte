@@ -19,9 +19,23 @@
 	#image {
 		@apply fill-stone-800 dark:fill-gray-300;
 	}
-    .bg-dotted {
-        @apply overflow-hidden relative;
-    }
+	.bg-dotted {
+		@apply overflow-hidden relative;
+
+		background-image: radial-gradient(
+			circle at center,
+			theme('colors.gray.50'/0%) 60%,
+			theme('colors.gray.50') 80%
+		);
+
+		@media (prefers-color-scheme: dark) {
+			background-image: radial-gradient(
+				circle at center,
+				theme('colors.zinc.900'/0%) 60%,
+				theme('colors.zinc.900') 80%
+			);
+		}
+	}
 	.bg-dotted::before {
 		content: '';
 		position: absolute;
@@ -29,10 +43,14 @@
 		height: 200%;
 		top: -50%;
 		left: -50%;
-		z-index: -1;
-        rotate: 2deg;
-		background-image: radial-gradient(circle at 1px 1px, theme('colors.black') 0.5px, transparent 0);
-		background-size: 5px 5px;
+		z-index: -2;
+		rotate: -1deg;
+		background-image: radial-gradient(
+			circle at 1px 1px,
+			theme('colors.black') 0.5px,
+			transparent 0
+		);
+		background-size: 7px 7px;
 		@media (prefers-color-scheme: dark) {
 			background-image: radial-gradient(
 				circle at 1px 1px,

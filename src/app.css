@@ -29,6 +29,10 @@ article {
 		@apply font-black;
 	}
 
+	a {
+		@apply text-blue-500 dark:text-blue-400 italic hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-semibold;
+	}
+
 	p {
 		@apply mb-4;
 	}
@@ -66,10 +70,9 @@ article {
 		@apply list-decimal;
 	}
 
-	pre {
-		@apply p-2 rounded-xl overflow-scroll border border-neutral-600 dark:border-neutral-700;
-		@apply bg-neutral-200 dark:bg-[#282c34] text-[#383a42] dark:text-[#abb2bf];
-		@apply drop-shadow-[0_5px_6px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_5px_6px_rgba(0,0,0,0.8)];
+	pre[class*='language-'] {
+		@apply p-2 rounded-md overflow-scroll overflow-y-hidden border border-neutral-300 dark:border-neutral-700 mb-2;
+		@apply bg-neutral-50 dark:bg-[#282c34] text-[#383a42] dark:text-[#abb2bf];
 		@apply text-sm text-left whitespace-pre font-mono;
 		direction: ltr;
 		word-spacing: normal;
@@ -81,5 +84,172 @@ article {
 		-moz-hyphens: none;
 		-ms-hyphens: none;
 		hyphens: none;
+	}
+	pre[class*='language-'] *::-moz-selection,
+	pre[class*='language-'] *::selection {
+		@apply bg-[#e5e5e6] dark:bg-[#3e4451] text-inherit;
+	}
+
+	.token.comment,
+	.token.prolog,
+	.token.cdata {
+		@apply text-[#a0a1a7] dark:text-[#5c6370];
+	}
+
+	.token.doctype,
+	.token.punctuation,
+	.token.entity {
+		@apply text-[#383a42] dark:text-[#abb2bf];
+	}
+
+	.token.attr-name,
+	.token.class-name,
+	.token.boolean,
+	.token.constant,
+	.token.number,
+	.token.atrule {
+		@apply text-[#b76b01] dark:text-[#d19a66];
+	}
+
+	.token.keyword {
+		@apply text-[#a626a4] dark:text-[#c678dd];
+	}
+
+	.token.property,
+	.token.tag,
+	.token.symbol,
+	.token.deleted,
+	.token.important {
+		@apply text-[#e45649] dark:text-[#e06c75];
+	}
+
+	.token.selector,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted,
+	.token.regex,
+	.token.attr-value,
+	.token.attr-value > .token.punctuation {
+		@apply text-[#50a14f] dark:text-[#98c379];
+	}
+
+	.token.variable,
+	.token.operator,
+	.token.function {
+		@apply text-[#4078f2] dark:text-[#61afef];
+	}
+
+	.token.url {
+		@apply text-[#0184bc] dark:text-[#56b6c2];
+	}
+
+	/* HTML overrides */
+	.token.attr-value > .token.punctuation.attr-equals,
+	.token.special-attr > .token.attr-value > .token.value.css {
+		@apply text-[#383a42] dark:text-[#abb2bf];
+	}
+
+	/* CSS overrides */
+	.language-css .token.selector {
+		@apply text-[#e45649] dark:text-[#e06c75];
+	}
+
+	.language-css .token.property {
+		@apply text-[#383a42] dark:text-[#abb2bf];
+	}
+
+	.language-css .token.function,
+	.language-css .token.url > .token.function {
+		@apply text-[#0184bc] dark:text-[#56b6c2];
+	}
+
+	.language-css .token.url > .token.string.url {
+		@apply text-[#50a14f] dark:text-[#98c379];
+	}
+
+	.language-css .token.important,
+	.language-css .token.atrule .token.rule {
+		@apply text-[#a626a4] dark:text-[#c678dd];
+	}
+
+	/* JS overrides */
+	.language-javascript .token.operator {
+		@apply text-[#a626a4] dark:text-[#c678dd];
+	}
+
+	.language-javascript
+		.token.template-string
+		> .token.interpolation
+		> .token.interpolation-punctuation.punctuation {
+		@apply text-[#ca1243] dark:text-[#be5046];
+	}
+
+	/* JSON overrides */
+	.language-json .token.operator {
+		@apply text-[#383a42] dark:text-[#abb2bf];
+	}
+
+	.language-json .token.null.keyword {
+		@apply text-[#b76b01] dark:text-[#d19a66];
+	}
+
+	/* MD overrides */
+	.language-markdown .token.url,
+	.language-markdown .token.url > .token.operator,
+	.language-markdown .token.url-reference.url > .token.string {
+		@apply text-[#383a42] dark:text-[#abb2bf];
+	}
+
+	.language-markdown .token.url > .token.content {
+		@apply text-[#4078f2] dark:text-[#61afef];
+	}
+
+	.language-markdown .token.url > .token.url,
+	.language-markdown .token.url-reference.url {
+		@apply text-[#0184bc] dark:text-[#56b6c2];
+	}
+
+	.language-markdown .token.blockquote.punctuation,
+	.language-markdown .token.hr.punctuation {
+		@apply text-[#a0a1a7] dark:text-[#5c6370];
+		font-style: italic;
+	}
+
+	.language-markdown .token.code-snippet {
+		@apply text-[#50a14f] dark:text-[#98c379];
+	}
+
+	.language-markdown .token.bold .token.content {
+		@apply text-[#b76b01] dark:text-[#d19a66];
+	}
+
+	.language-markdown .token.italic .token.content {
+		@apply text-[#a626a4] dark:text-[#c678dd];
+	}
+
+	.language-markdown .token.strike .token.content,
+	.language-markdown .token.strike .token.punctuation,
+	.language-markdown .token.list.punctuation,
+	.language-markdown .token.title.important > .token.punctuation {
+		@apply text-[#e45649] dark:text-[#e06c75];
+	}
+
+	/* General */
+	.token.bold {
+		@apply font-bold;
+	}
+
+	.token.comment,
+	.token.italic {
+		font-style: italic;
+	}
+
+	.token.entity {
+		@apply cursor-help;
+	}
+
+	.token.namespace {
+		@apply opacity-80;
 	}
 }

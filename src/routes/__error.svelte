@@ -6,7 +6,6 @@
 		return {
 			props: {
 				status: status,
-				slug: params.slug
 			}
 		};
 	};
@@ -14,7 +13,6 @@
 
 <script lang="ts">
 	export let status: number;
-	export let slug: string;
 </script>
 
 <svelte:head>
@@ -24,7 +22,7 @@
 <div class="flex flex-col items-center justify-center overflow-auto m-4 break-all">
 	<h1 class="text-9xl">{status}</h1>
 	{#if status === 404}
-		<h2 class="text-2xl">"{slug}" not found</h2>
+		<h2 class="text-2xl">Page not found</h2>
 	{:else}
 		<h2 class="text-2xl">Something went wrong</h2>
 	{/if}
