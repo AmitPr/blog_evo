@@ -1,7 +1,7 @@
 ---
 description: Why I think decentralized technologies may never see mass adoption.
 date: 1651755600
-topic: "Tech"
+topic: Musings
 url: against-decentralization
 ---
 

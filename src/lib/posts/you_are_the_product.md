@@ -1,7 +1,7 @@
 ---
 description: Finding out about the hidden price of internet services we take for granted.
 date: 1635359400
-topic: "Tech"
+topic: Musings
 url: you-are-the-product
 ---
 # You are the Product
