@@ -23,7 +23,7 @@
 			{post.metadata.title}
 			{#if showTopic}
 				<span class="align-top">
-					<TopicTag topic={post.metadata.topic} compact={true} />
+					<TopicTag topic={post.metadata.topic} compact />
 				</span>
 			{/if}
 		</p>

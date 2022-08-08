@@ -40,8 +40,8 @@
     <meta name="twitter:url" content="https://prasad.me/" />
 </svelte:head>
 
-<Navbar />
-<div class="m-4">
+<div class="mx-4 mb-4">
+	<Navbar wide/>
 	<div class="flex flex-col lg:flex-row space-x-2 max-w-4xl mx-auto items-stretch ">
 		<About compact />
 		<div class="flex-grow">

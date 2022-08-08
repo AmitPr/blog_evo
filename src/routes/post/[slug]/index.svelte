@@ -59,7 +59,7 @@
 			<div class="flex flex-col space-y-1 mt-6 mb-3">
 				<h1>{metadata.title}</h1>
 				<PostedDetails date={metadata.date} />
-				<TopicTag topic={metadata.topic} />
+				<TopicTag topic={metadata.topic} compact={false} />
 			</div>
 			<svelte:component this={page} />
 		</article>
