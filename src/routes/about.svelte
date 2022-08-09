@@ -5,6 +5,7 @@ import Navbar from "$lib/components/Navbar.svelte";
 
 <svelte:head>
 	<title>About | Amit Prasad</title>
+    <meta name="description" content="About Amit Prasad" />
 	
     <meta property="og:url" content="https://prasad.me/about" />
     <meta property="og:title" content="About | Amit Prasad" />

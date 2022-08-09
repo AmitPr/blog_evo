@@ -43,6 +43,7 @@
 
 <svelte:head>
 	<title>{metadata.title} | Amit Prasad</title>
+    <meta name="description" content="{metadata.description}" />
 	
     <meta property="og:url" content="https://prasad.me/post/{metadata.url}" />
     <meta property="og:title" content="{metadata.title}" />

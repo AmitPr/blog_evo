@@ -30,6 +30,7 @@
 
 <svelte:head>
 	<title>Amit Prasad's Site</title>
+    <meta name="description" content="Amit Prasad's homepage on the web." />
 
     <meta property="og:url" content="https://prasad.me/" />
     <meta property="og:title" content="Amit Prasad's Site" />
