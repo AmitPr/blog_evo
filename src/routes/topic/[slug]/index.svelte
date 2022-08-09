@@ -1,51 +1,8 @@
-<script lang="ts" context="module">
-	import type { Post } from '$lib/types/post';
-	import type { Load } from './__types/index.d';
-
-	const allPosts: { [path: string]: Post } = import.meta.glob('$lib/posts/*.md', { eager: true });
-
-	let posts: { [topic: string]: Post[] } = {};
-
-	for (let path in allPosts) {
-		const post = allPosts[path];
-		const slug = post.metadata.topic.toLowerCase();
-		if (posts[slug]) {
-			posts[slug].push(post);
-		} else {
-			posts[slug] = [post];
-		}
-	}
-
-	Object.keys(posts).forEach(topic => {
-		posts[topic].sort((a, b) => {
-			return b.metadata.date - a.metadata.date;
-		});
-	});
-
-	type Input = Record<string, any>;
-	type Output = Record<string, any>;
-	export const load: Load<Input, Output> = async ({ params }) => {
-		const filtered = posts[params.slug.toLowerCase()];
-		if (!filtered) {
-			return {
-				status: 404,
-				error: `Category not found: "${params.slug}"`
-			};
-		}
-
-		return {
-			props: {
-				posts: filtered,
-				topic: params.slug.toLowerCase()
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
 	import PostPreview from '$lib/components/PostPreview.svelte';
+	import type { Metadata } from '$lib/types/metadata';
 
-	export let posts: Post[];
+	export let posts: Metadata[];
 	export let topic: string;
 </script>
 

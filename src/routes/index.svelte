@@ -1,48 +1,27 @@
-<script lang="ts" context="module">
-	import type { Load } from './__types/index.d';
-
-	const allPosts: { [path: string]: Post } = import.meta.glob('$lib/posts/*.md', { eager: true });
-
-	let posts: Post[] = Object.values(allPosts);
-	posts.sort((a, b) => b.metadata.date - a.metadata.date);
-
-	type Input = Record<string, any>;
-	type Output = Record<string, any>;
-	export const load: Load<Input, Output> = async ({ params, fetch }) => {
-		return {
-			status: 200,
-			props: {
-				posts: posts
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
-	import type { Post } from '$lib/types/post';
-
 	import PostPreview from '$lib/components/PostPreview.svelte';
 	import About from '$lib/components/About.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import type { Metadata } from '$lib/types/metadata';
 
-	export let posts: Post[];
+	export let posts: Metadata[];
 </script>
 
 <svelte:head>
 	<title>Amit Prasad's Site</title>
-    <meta name="description" content="Amit Prasad's homepage on the web." />
+	<meta name="description" content="Amit Prasad's homepage on the web." />
 
-    <meta property="og:url" content="https://prasad.me/" />
-    <meta property="og:title" content="Amit Prasad's Site" />
-    <meta property="og:description" content="Amit Prasad's homepage on the web." />
+	<meta property="og:url" content="https://prasad.me/" />
+	<meta property="og:title" content="Amit Prasad's Site" />
+	<meta property="og:description" content="Amit Prasad's homepage on the web." />
 
-    <meta name="twitter:title" content="Amit Prasad's Site" />
-    <meta name="twitter:description" content="Amit Prasad's homepage on the web." />
-    <meta name="twitter:url" content="https://prasad.me/" />
+	<meta name="twitter:title" content="Amit Prasad's Site" />
+	<meta name="twitter:description" content="Amit Prasad's homepage on the web." />
+	<meta name="twitter:url" content="https://prasad.me/" />
 </svelte:head>
 
 <div class="mx-4 mb-4">
-	<Navbar wide/>
+	<Navbar wide />
 	<div class="flex flex-col lg:flex-row space-x-2 max-w-4xl mx-auto items-stretch ">
 		<About compact />
 		<div class="flex-grow">

@@ -32,7 +32,10 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		browser: {
+			router: false,
+		},
 	},
 	extensions: [
 		".svelte",

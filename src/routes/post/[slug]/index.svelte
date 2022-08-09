@@ -1,37 +1,3 @@
-<script lang="ts" context="module">
-	import type { Post } from '$lib/types/post';
-	import type { Load } from './__types/index.d';
-
-	const allPosts: { [path: string]: Post } = import.meta.glob('$lib/posts/*.md', { eager: true });
-
-	let posts: { [slug: string]: Post } = {};
-
-	for (let path in allPosts) {
-		const post = allPosts[path];
-		const slug = post.metadata.url.toLowerCase();
-		posts[slug] = post;
-	}
-
-	type Input = Record<string, any>;
-	type Output = Record<string, any>;
-	export const load: Load<Input, Output> = async ({ params }) => {
-		const post = posts[params.slug.toLowerCase()];
-		if (!post) {
-			return {
-				status: 404,
-				error: `Not found: /${params.slug}`
-			};
-		}
-
-		return {
-			props: {
-				page: post.default,
-				metadata: post.metadata
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
 	import TopicTag from '$lib/components/TopicTag.svelte';
 	import type { Metadata } from '$lib/types/metadata';
