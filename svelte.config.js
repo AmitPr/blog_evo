@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 import { mdsvex } from "mdsvex";
 
@@ -24,6 +25,7 @@ const h1FrontmatterPreprocessor = {
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
+		vitePreprocess(),
 		preprocess({ postcss: true }),
 		h1FrontmatterPreprocessor,
 		mdsvex({
@@ -33,9 +35,6 @@ const config = {
 	],
 	kit: {
 		adapter: adapter(),
-		browser: {
-			router: false,
-		},
 	},
 	extensions: [
 		".svelte",
